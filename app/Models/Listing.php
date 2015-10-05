@@ -17,7 +17,9 @@ class Listing extends UUIDModel{
         return $this->multiMorphMany('App\Models\Translation', 'translatable', 'listing_title');
     }
 
-
+    public function description(){
+        return $this->multiMorphMany('App\Models\Translation', 'translatable', 'listing_description');
+    }
 
     public function multiMorphMany($related, $name, $customType, $type = null, $id = null, $localKey = null)
     {

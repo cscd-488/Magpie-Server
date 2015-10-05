@@ -17,15 +17,18 @@ class Controller extends BaseController
             'price' => 'required|integer',
             'condition' => 'required|integer',
             'title' => 'max:80',
-            'description' => 'max:512'
+            'description' => 'max:512',
+            'lang' => 'required|in:en,es'
         ]);
 
         $title = $request->get('title');
         $description = $request->get('description');
+        $lang = $request->get('lang');
 
         $listing = Listing::create($data);
 
-        $listing->title()->create(['value' => $title]);
+        $listing->title()->create(['value' => $title, 'lang' => $lang]);
+        $listing->title()->create(['value' => $description, 'lang' => $lang]);
 
         return $listing->toJson();
     }
@@ -36,7 +39,6 @@ class Controller extends BaseController
 
         $listings->load('title');
 
-//        var_dump($listings->toArray());
         return $listings;
     }
 
