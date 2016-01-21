@@ -8,7 +8,9 @@
         "php": ">=5.5.9",
         "laravel/lumen-framework": "5.1.*",
         "vlucas/phpdotenv": "~1.0",
-        "ramsey/uuid": "^3.0"
+        "ramsey/uuid": "^3.0",
+        "league/oauth2-client": "^1.1",
+        "league/oauth2-facebook": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",

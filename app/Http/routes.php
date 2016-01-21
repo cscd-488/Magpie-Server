@@ -11,9 +11,8 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->welcome();
+$app->get('/fb-test-creds', function () use ($app) {
+    return file_get_contents($app->resourcePath('views/fb-test-creds.html'));
 });
 
-$app->post('listings/create', 'Controller@createListing');
-$app->get('listings', 'Controller@index');
+$app->post('facebook/login', 'Controller@facebookLogin');

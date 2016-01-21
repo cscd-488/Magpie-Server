@@ -2,44 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Listing;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
+use League\OAuth2\Client\Provider\Facebook;
 
 class Controller extends BaseController
 {
 
-    public function createListing(Request $request){
+    private $facebookClient;
 
-        $data = $request->all();
-
-        $this->validate($request, [
-            'price' => 'required|integer',
-            'condition' => 'required|integer',
-            'title' => 'max:80',
-            'description' => 'max:512',
-            'lang' => 'required|in:en,es'
+    /**
+     * Controller constructor.
+     */
+    public function __construct()
+    {
+        $this->facebookClient = new Facebook([
+            'clientId'          => '1678368379046192',
+            'clientSecret'      => 'f8f3546ba43431d3be08224653775175',
+            'redirectUri'       => 'https://playground.app',
+            'graphApiVersion'   => 'v2.5',
         ]);
-
-        $title = $request->get('title');
-        $description = $request->get('description');
-        $lang = $request->get('lang');
-
-        $listing = Listing::create($data);
-
-        $listing->title()->create(['value' => $title, 'lang' => $lang]);
-        $listing->title()->create(['value' => $description, 'lang' => $lang]);
-
-        return $listing->toJson();
     }
 
-    public function index(){
+    public function facebookLogin(Request $request){
 
-        $listings = Listing::all();
+        // https://github.com/thephpleague/oauth2-facebook
+        // https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow
 
-        $listings->load('title');
+        $fbAuthCode = $request->get('token');
 
-        return $listings;
+        $fbAccessToken = $this->facebookClient->getLongLivedAccessToken($fbAuthCode);
+
+        $owner = $this->facebookClient->getResourceOwner($fbAccessToken);
+
+        return $owner->toArray();
     }
-
 }
