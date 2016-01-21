@@ -1,6 +1,9 @@
 <?php
 
+use Tymon\JWTAuth\Providers\JWTAuthServiceProvider;
+
 require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/../app/helpers.php';
 
  Dotenv::load(__DIR__.'/../');
 
@@ -80,6 +83,7 @@ $app->singleton(
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+$app->register(JWTAuthServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
