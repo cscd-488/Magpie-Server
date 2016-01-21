@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Middleware\JWTGenerateToken;
 use Tymon\JWTAuth\Providers\JWTAuthServiceProvider;
+use Tymon\JWTAuth\Test\JWTGenerateCommandTest;
 
 require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/../app/helpers.php';
@@ -46,6 +48,11 @@ $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
 );
+
+/**
+ * Load config files
+ */
+load_config_file('jwt', config_path('jwt.php'));
 
 /*
 |--------------------------------------------------------------------------
