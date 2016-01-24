@@ -47,6 +47,11 @@ class Controller extends BaseController
         $user->save();
 
         $token = $this->authTokenProvider->fromUser($user);
-        return $token;
+        return [
+            'token' => $token,
+            'user' => $user
+        ];
     }
+
+
 }

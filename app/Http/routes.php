@@ -16,3 +16,8 @@ $app->get('/fb-test-creds', function () use ($app) {
 });
 
 $app->post('facebook/login', 'Controller@facebookLogin');
+
+$app->get('events', [
+    'middleware' => 'jwt-authcheck',
+    'uses' => 'EventsController@getEvents'
+]);

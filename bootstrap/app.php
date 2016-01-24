@@ -73,9 +73,9 @@ load_config_file('jwt', config_path('jwt.php'));
 //     // Laravel\Lumen\Http\Middleware\VerifyCsrfToken::class,
 // ]);
 
-// $app->routeMiddleware([
-
-// ]);
+ $app->routeMiddleware([
+    'jwt-authcheck' => App\Http\Middleware\JWTAuthCheck::class
+ ]);
 
 /*
 |--------------------------------------------------------------------------
