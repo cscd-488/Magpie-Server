@@ -10,7 +10,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class Controller extends BaseController
 {
-
+``
     private $facebookClient;
     private $authTokenProvider;
 
@@ -20,9 +20,9 @@ class Controller extends BaseController
     public function __construct(\Tymon\JWTAuth\JWTAuth $auth)
     {
         $this->facebookClient = new Facebook([
-            'clientId'          => '1678368379046192',
-            'clientSecret'      => 'f8f3546ba43431d3be08224653775175',
-            'redirectUri'       => 'https://playground.app',
+            'clientId'          => '1132303580136076',
+            'clientSecret'      => 'be8b5568716ab55294283199d15f1b97',
+            'redirectUri'       => 'http://event-test.app',
             'graphApiVersion'   => 'v2.5',
         ]);
 
