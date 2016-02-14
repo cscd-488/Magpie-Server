@@ -1,11 +1,6 @@
 <?php
-/**
- * @author Benjamin Daschel
- * Date: 1/20/16
- */
 
 namespace App\Models;
-
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,7 +11,7 @@ class User extends Model
 
     protected $fillable = ['first_name', 'last_name'];
 
-    public static function findOrCreateByFacebookId($facebookId){
-        return static::firstOrCreate(['facebook_id' => $facebookId]);
+    public static function findOrCreateByGoogleId($googleId){
+        return static::firstOrCreate(['google_id' => $googleId]);
     }
 }
