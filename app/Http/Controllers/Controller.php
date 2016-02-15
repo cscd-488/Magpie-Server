@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Laravel\Lumen\Routing\Controller as BaseController;
 use League\OAuth2\Client\Provider\Google;
 use App\Models\User;
@@ -42,15 +43,14 @@ class Controller extends BaseController
 
             $owner = $this->googleClient->getResourceOwner($token);
 
-            /* Debug */
-            printf('Hello %s!', $owner->getFirstName());
-
-
             $user = User::findOrCreateByGoogleId($owner->getId());
-            $user->fill($owner->toArray());
+            $user->fill([
+                'first_name'    => $owner->getFirstName(),
+                'last_name'     => $owner->getLastName()
+            ]);
             $user->save();
 
-
+            // generate jwt token
             $userToken = $this->authTokenProvider->fromUser($user);
 
             return [
@@ -63,6 +63,5 @@ class Controller extends BaseController
         }
 
     }
-
 
 }

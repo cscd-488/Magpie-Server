@@ -9,7 +9,7 @@ class User extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    protected $fillable = ['first_name', 'last_name'];
+    protected $fillable = ['google_id', 'first_name', 'last_name'];
 
     public static function findOrCreateByGoogleId($googleId){
         return static::firstOrCreate(['google_id' => $googleId]);
