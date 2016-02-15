@@ -19,8 +19,8 @@ class Controller extends BaseController
     public function __construct(\Tymon\JWTAuth\JWTAuth $auth)
     {
         $this->googleClient = new Google([
-            'clientId'          => '733348910797-5et9jiv9l6t5ev3n5mkcshgf86q1us6v.apps.googleusercontent.com',
-            'clientSecret'      => 'H2NN3t58KDBx2eUVL68AnOn7',
+            'clientId'          => '170378995036-99ob67o6p5871kn02omq6bh5blb25070.apps.googleusercontent.com',
+            'clientSecret'      => 'J4yTdS7nkP0QnfVFlzqOdC0P',
             'redirectUri'       => 'http://event-web.app',
         ]);
 
@@ -41,19 +41,23 @@ class Controller extends BaseController
         try {
 
             $owner = $this->googleClient->getResourceOwner($token);
-            printf('Hello %s!', $owner->getId());
-            /*
+
+            /* Debug */
+            printf('Hello %s!', $owner->getFirstName());
+
+
             $user = User::findOrCreateByGoogleId($owner->getId());
             $user->fill($owner->toArray());
             $user->save();
 
-            $token = $this->authTokenProvider->fromUser($user);
+
+            $userToken = $this->authTokenProvider->fromUser($user);
 
             return [
-                'token' => $token,
+                'token' => $userToken,
                 'user' => $user
             ];
-            */
+
         } catch (Exception $e) {
             exit('Failed to get Resource: '.$e->getMessage());
         }
