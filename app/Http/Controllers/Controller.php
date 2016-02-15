@@ -32,17 +32,32 @@ class Controller extends BaseController
 
         // https://github.com/thephpleague/oauth2-google
 
-        $gpAuthCode = $request->get('token');
-        $gpAccessToken = $this->googleClient->getLongLivedAccessToken($gpAuthCode);
-        $owner = $this->googleClient->getResourceOwner($gpAccessToken);
-        $user = User::findOrCreateByGoogleId($owner->getId());
-        $user->fill($owner->toArray());
-        $user->save();
-        $token = $this->authTokenProvider->fromUser($user);
-        return [
-            'token' => $token,
-            'user' => $user
-        ];
+        // get and use token to obtain access token
+        $token = $this->googleClient->getAccessToken('authorization_code', [
+            'code' => $request->get('code')
+        ]);
+
+        // get owner details
+        try {
+
+            $owner = $this->googleClient->getResourceOwner($token);
+            printf('Hello %s!', $owner->getId());
+            /*
+            $user = User::findOrCreateByGoogleId($owner->getId());
+            $user->fill($owner->toArray());
+            $user->save();
+
+            $token = $this->authTokenProvider->fromUser($user);
+
+            return [
+                'token' => $token,
+                'user' => $user
+            ];
+            */
+        } catch (Exception $e) {
+            exit('Failed to get Resource: '.$e->getMessage());
+        }
+
     }
 
 
