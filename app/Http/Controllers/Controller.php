@@ -21,8 +21,8 @@ class Controller extends BaseController
     {
         $this->googleClient = new Google([
             'clientId'          => '170378995036-99ob67o6p5871kn02omq6bh5blb25070.apps.googleusercontent.com',
-            'clientSecret'      => 'J4yTdS7nkP0QnfVFlzqOdC0P',
-            'redirectUri'       => 'http://event-web.app',
+            'clientSecret'      => env("CLIENT_SECRET"),
+            'redirectUri'       => 'http://magpieserver.com',
         ]);
 
         $this->authTokenProvider = $auth;
@@ -32,7 +32,7 @@ class Controller extends BaseController
     {
 
         // https://github.com/thephpleague/oauth2-google
-
+	print "test";
         // get and use token to obtain access token
         $token = $this->googleClient->getAccessToken('authorization_code', [
             'code' => $request->get('code')
@@ -55,7 +55,6 @@ class Controller extends BaseController
 
             return [
                 'token' => $userToken,
-                'user' => $user
             ];
 
         } catch (Exception $e) {
