@@ -1,8 +1,4 @@
 <?php
-/**
- * User: ben
- * Date: 10/4/15
- */
 
 namespace App\Models;
 

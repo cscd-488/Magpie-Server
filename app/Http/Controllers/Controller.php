@@ -53,6 +53,7 @@ class Controller extends BaseController
             // generate jwt token
             $userToken = $this->authTokenProvider->fromUser($user);
 
+
             return [
                 'token' => $userToken,
             ];

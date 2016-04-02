@@ -1,8 +1,4 @@
 <?php
-/**
- * @author Benjamin Daschel
- * Date: 1/23/16
- */
 
 namespace App\Http\Controllers;
 
