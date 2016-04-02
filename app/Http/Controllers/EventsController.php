@@ -11,8 +11,7 @@ class EventsController
 
     public function getEvents(Request $request)
     {
-
-        return Event::with('locations')->get();
+        return Event::with('checkpoints')->get();
     }
 
     public function postEvent(Request $request)

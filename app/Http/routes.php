@@ -11,13 +11,13 @@
 |
 */
 
-$app->get('/fb-test-creds', function () use ($app) {
-    return file_get_contents($app->resourcePath('views/fb-test-creds.html'));
-});
-
 $app->post('google/login', 'Controller@googleLogin');
 
+/*
 $app->get('events', [
     'middleware' => 'jwt-authcheck',
     'uses' => 'EventsController@getEvents'
 ]);
+*/
+
+$app->get('events', 'EventsController@getEvents');
