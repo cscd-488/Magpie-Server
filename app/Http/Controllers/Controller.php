@@ -56,7 +56,6 @@ class Controller extends BaseController
 
             return [
                 'token' => $userToken,
-                'user' => $user
             ];
 
         } catch (Exception $e) {
