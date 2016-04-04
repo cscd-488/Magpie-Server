@@ -32,7 +32,7 @@ class Controller extends BaseController
     {
 
         // https://github.com/thephpleague/oauth2-google
-	print "test";
+
         // get and use token to obtain access token
         $token = $this->googleClient->getAccessToken('authorization_code', [
             'code' => $request->get('code')
@@ -52,7 +52,6 @@ class Controller extends BaseController
 
             // generate jwt token
             $userToken = $this->authTokenProvider->fromUser($user);
-
 
             return [
                 'token' => $userToken,
