@@ -15,7 +15,7 @@ class CreateCheckpointsTable extends Migration
         Schema::create('checkpoints', function (Blueprint $table) {
             $table->increments('checkpoint_id');
             $table->string('event_id');
-            $table->string('tile');
+            $table->string('title');
             $table->string('artist');
             $table->string('description');
             $table->string('image_src');
