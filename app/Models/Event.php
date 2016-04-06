@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
 
-    public function locations(){
-        return $this->hasMany('App\Models\Location');
+    public function checkpoints(){
+        return $this->hasMany('App\Models\Checkpoint');
     }
 }
