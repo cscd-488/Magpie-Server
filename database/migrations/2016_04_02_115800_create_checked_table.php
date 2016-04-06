@@ -18,8 +18,8 @@ class CreateCheckedTable extends Migration
             $table->increments('id');
 
             // foreign key
-            $table->string('user_id');
-            $table->string('checkpoint_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('checkpoint_id')->unsigned();
 
         });
 

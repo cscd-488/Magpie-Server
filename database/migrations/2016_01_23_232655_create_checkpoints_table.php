@@ -18,7 +18,7 @@ class CreateCheckpointsTable extends Migration
             $table->increments('id');
 
             // foreign key
-            $table->string('event_id');
+            $table->integer('event_id')->unsigned();
 
             // other fields
             $table->string('title');

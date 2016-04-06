@@ -18,8 +18,8 @@ class CreateSubscriptionsTable extends Migration
             $table->increments('id'); // primary key
 
             // foreign key
-            $table->string('user_id'); // foreign key
-            $table->string('event_id'); // foreign key
+            $table->integer('user_id')->unsigned();
+            $table->integer('event_id')->unsigned();
 
         });
 

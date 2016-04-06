@@ -18,8 +18,8 @@ class CreateRedeemedTable extends Migration
             $table->increments('id');
 
             // foreign key
-            $table->string('user_id');
-            $table->string('event_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('event_id')->unsigned();
 
             // other fields
             $table->string('redeemed');
