@@ -13,7 +13,11 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->increments('event_id');
+
+            // primary key
+            $table->increments('id');
+
+            // other fields
             $table->string('title');
             $table->string('short_title');
             $table->string('author');

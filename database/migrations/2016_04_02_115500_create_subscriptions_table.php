@@ -13,9 +13,18 @@ class CreateSubscriptionsTable extends Migration
     public function up()
     {
         Schema::create('subscriptions', function (Blueprint $table) {
-            $table->increments('subscription_id');
-            $table->string('user_id');
-            $table->string('event_id');
+
+            // primary key
+            $table->increments('id'); // primary key
+
+            // foreign key
+            $table->string('user_id'); // foreign key
+            $table->string('event_id'); // foreign key
+
+            // relations
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('event_id')->references('id')->on('events');
+
         });
     }
 

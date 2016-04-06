@@ -13,9 +13,21 @@ class CreateRedeemedTable extends Migration
     public function up()
     {
         Schema::create('redeemed', function (Blueprint $table) {
-            $table->increments('redeemed_id');
+
+            // primary key
+            $table->increments('id');
+
+            // foreign key
             $table->string('user_id');
             $table->string('event_id');
+
+            // relations
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('event_id')->references('id')->on('events');
+
+            // other fields
+            $table->string('redeemed');
+
         });
     }
 

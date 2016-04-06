@@ -13,8 +13,18 @@ class CreateCheckpointsTable extends Migration
     public function up()
     {
         Schema::create('checkpoints', function (Blueprint $table) {
-            $table->increments('checkpoint_id');
+
+            // primary key
+            $table->increments('id');
+
+            // foreign key
             $table->string('event_id');
+
+            // relations
+            $table->foreign('event_id')->references('id')->on('events');
+
+
+            // other fields
             $table->string('title');
             $table->string('artist');
             $table->string('description');

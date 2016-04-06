@@ -13,9 +13,17 @@ class CreateCheckedTable extends Migration
     public function up()
     {
         Schema::create('checked', function (Blueprint $table) {
-            $table->increments('checked_id');
+
+            // primary key
+            $table->increments('id');
+
+            // foreign key
             $table->string('user_id');
             $table->string('checkpoint_id');
+
+            // relations
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('checkpoint_id')->references('id')->on('checkpoints');
         });
     }
 
