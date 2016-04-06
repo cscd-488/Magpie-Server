@@ -21,10 +21,13 @@ class CreateCheckedTable extends Migration
             $table->string('user_id');
             $table->string('checkpoint_id');
 
-            // relations
+        });
+
+        Schema::table('checked', function($table) {
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('checkpoint_id')->references('id')->on('checkpoints');
         });
+
     }
 
     /**

@@ -21,12 +21,14 @@ class CreateRedeemedTable extends Migration
             $table->string('user_id');
             $table->string('event_id');
 
-            // relations
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('event_id')->references('id')->on('events');
-
             // other fields
             $table->string('redeemed');
+
+        });
+
+        Schema::table('redeemed', function($table) {
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('event_id')->references('id')->on('events');
 
         });
     }

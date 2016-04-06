@@ -21,7 +21,9 @@ class CreateSubscriptionsTable extends Migration
             $table->string('user_id'); // foreign key
             $table->string('event_id'); // foreign key
 
-            // relations
+        });
+
+        Schema::table('subscriptions', function ($table) {
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('event_id')->references('id')->on('events');
 

@@ -20,10 +20,6 @@ class CreateCheckpointsTable extends Migration
             // foreign key
             $table->string('event_id');
 
-            // relations
-            $table->foreign('event_id')->references('id')->on('events');
-
-
             // other fields
             $table->string('title');
             $table->string('artist');
@@ -34,6 +30,11 @@ class CreateCheckpointsTable extends Migration
             $table->string('qr');
             $table->timestamps();
         });
+
+        Schema::table('checkpoints', function($table) {
+            $table->foreign('event_id')->references('id')->on('events');
+        });
+
     }
 
     /**
