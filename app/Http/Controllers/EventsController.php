@@ -13,9 +13,8 @@ class EventsController
     public function pullData(Request $request) {
 
         //evaluate request
-        //$api_code = $request->get('requestcode');
 
-        $api_code = $this->$request->get('requestcode');
+        //$api_code = $this->$request->get('requestcode');
 
         if(is_numeric($api_code) || $api_code == null) {
 
