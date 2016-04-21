@@ -52,8 +52,12 @@ class EventsController
     // TODO:
     /* Return list of locations by event */
     private function getLocationsByEvent(Request $request) {
-        $checkpoint = new Checkpoint($request->header('data'));
-        return $checkpoint->with('event')->get();
+
+
+	$checkpoint = Checkpoint::query()->findorFail($request->get('data'));	
+        return $checkpoint->has('event')->get();
+
+
     }
 
     public function postEvent(Request $request)
