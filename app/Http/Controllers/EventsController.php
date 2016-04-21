@@ -14,19 +14,17 @@ class EventsController
 
         //evaluate request
 
-        //$api_code = $this->$request->get('requestcode');
+        $api_code = $request->get('requestcode');
 
         if(is_numeric($api_code) || $api_code == null) {
 
             switch($api_code) {
                 case 1:
-                    $this->getEventsWithLocations();
-                    break;
+                    return $this->getEventsWithLocations();
                 case 2:
-                    $this->getEvents();
-                    break;
+                    return $this->getEvents();
                 case 3:
-                    $this->getLocationsByEvent($request);
+                    return $this->getLocationsByEvent($request);
                 default:
                     abort('400', 'api code does not exist');
             }
