@@ -24,7 +24,7 @@ class EventsController
                 case 2:
                     return $this->getEvents();
                 case 3:
-                    return $this->getLocationsByEvent($request);
+                    return $this->getEventByLocation($request);
                 default:
                     abort('400', 'api code does not exist');
             }
@@ -49,14 +49,26 @@ class EventsController
     }
 
 
-    // TODO:
-    /* Return list of locations by event */
-    private function getLocationsByEvent(Request $request) {
-
-
-	$checkpoint = Checkpoint::query()->findorFail($request->get('data'));	
+    // TODO: fix this. Returns checkpoint. Does not return event.
+    private function getEventByLocation(Request $request)
+    {
+	    $checkpoint = Checkpoint::query()->findorFail($request->get('data'));
         return $checkpoint->has('event')->get();
+    }
 
+    public function visitLocation(Request $request)
+    {
+        // request header information
+        $item = $request->get('data');      // location by id
+        $opcode = $request->get('status');  // 1 or 0 indicating visit status
+
+        //TODO: filter input and avoid SQL injection
+
+        // build checkpoint
+        $checkpoint = Checkpoint::query()->findorFail($item);
+        $checkpoint->update(
+            array('status' => $opcode) // TODO: need to add attribute to model and table in db.
+        );
 
     }
 
