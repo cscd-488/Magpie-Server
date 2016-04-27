@@ -62,13 +62,20 @@ class EventsController
         $item = $request->get('data');      // location by id
         $opcode = $request->get('status');  // 1 or 0 indicating visit status
 
-        //TODO: filter input and avoid SQL injection
+        if(is_numeric($opcode)) {
 
-        // build checkpoint
-        $checkpoint = Checkpoint::query()->findorFail($item);
-        $checkpoint->update(
-            array('status' => $opcode) // TODO: need to add attribute to model and table in db.
-        );
+            // build checkpoint
+            $checkpoint = Checkpoint::query()->findorFail($item);
+            $checkpoint->update(
+                array('status' => $opcode) // TODO: need to add attribute to model and table in db.
+            );
+            $checkpoint->save();
+
+        } else {
+            abort('400', 'opcode non numeric');
+        }
+
+        return 1; // indication of completion
 
     }
 
