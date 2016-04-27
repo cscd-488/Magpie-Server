@@ -25,6 +25,8 @@ class EventsController
                     return $this->getEvents();
                 case 3:
                     return $this->getEventByLocation($request);
+                case 4:
+                    return $this->visitLocation($request);
                 default:
                     abort('400', 'api code does not exist');
             }
