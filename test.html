@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="noindex,nofollow" />
+        <style>
+            /* Copyright (c) 2010, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html */
+            html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
+
+            html { background: #eee; padding: 10px }
+            img { border: 0; }
+            #sf-resetcontent { width:970px; margin:0 auto; }
+                        .sf-reset { font: 11px Verdana, Arial, sans-serif; color: #333 }
+            .sf-reset .clear { clear:both; height:0; font-size:0; line-height:0; }
+            .sf-reset .clear_fix:after { display:block; height:0; clear:both; visibility:hidden; }
+            .sf-reset .clear_fix { display:inline-block; }
+            .sf-reset * html .clear_fix { height:1%; }
+            .sf-reset .clear_fix { display:block; }
+            .sf-reset, .sf-reset .block { margin: auto }
+            .sf-reset abbr { border-bottom: 1px dotted #000; cursor: help; }
+            .sf-reset p { font-size:14px; line-height:20px; color:#868686; padding-bottom:20px }
+            .sf-reset strong { font-weight:bold; }
+            .sf-reset a { color:#6c6159; cursor: default; }
+            .sf-reset a img { border:none; }
+            .sf-reset a:hover { text-decoration:underline; }
+            .sf-reset em { font-style:italic; }
+            .sf-reset h1, .sf-reset h2 { font: 20px Georgia, "Times New Roman", Times, serif }
+            .sf-reset .exception_counter { background-color: #fff; color: #333; padding: 6px; float: left; margin-right: 10px; float: left; display: block; }
+            .sf-reset .exception_title { margin-left: 3em; margin-bottom: 0.7em; display: block; }
+            .sf-reset .exception_message { margin-left: 3em; display: block; }
+            .sf-reset .traces li { font-size:12px; padding: 2px 4px; list-style-type:decimal; margin-left:20px; }
+            .sf-reset .block { background-color:#FFFFFF; padding:10px 28px; margin-bottom:20px;
+                -webkit-border-bottom-right-radius: 16px;
+                -webkit-border-bottom-left-radius: 16px;
+                -moz-border-radius-bottomright: 16px;
+                -moz-border-radius-bottomleft: 16px;
+                border-bottom-right-radius: 16px;
+                border-bottom-left-radius: 16px;
+                border-bottom:1px solid #ccc;
+                border-right:1px solid #ccc;
+                border-left:1px solid #ccc;
+            }
+            .sf-reset .block_exception { background-color:#ddd; color: #333; padding:20px;
+                -webkit-border-top-left-radius: 16px;
+                -webkit-border-top-right-radius: 16px;
+                -moz-border-radius-topleft: 16px;
+                -moz-border-radius-topright: 16px;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+                border-top:1px solid #ccc;
+                border-right:1px solid #ccc;
+                border-left:1px solid #ccc;
+                overflow: hidden;
+                word-wrap: break-word;
+            }
+            .sf-reset a { background:none; color:#868686; text-decoration:none; }
+            .sf-reset a:hover { background:none; color:#313131; text-decoration:underline; }
+            .sf-reset ol { padding: 10px 0; }
+            .sf-reset h1 { background-color:#FFFFFF; padding: 15px 28px; margin-bottom: 20px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+                    <div id="sf-resetcontent" class="sf-reset">
+                <h1>Whoops, looks like something went wrong.</h1>
+                                        <h2 class="block_exception clear_fix">
+                            <span class="exception_counter">1/1</span>
+                            <span class="exception_title"><abbr title="PDOException">PDOException</abbr> in <a title="/home/vagrant/Code/vendor/illuminate/database/Connectors/Connector.php line 50" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Connector.php line 50</a>:</span>
+                            <span class="exception_message">SQLSTATE[HY000] [1049] Unknown database &#039;lumen-playground&#039;</span>
+                        </h2>
+                        <div class="block">
+                            <ol class="traces list_exception">
+       <li> in <a title="/home/vagrant/Code/vendor/illuminate/database/Connectors/Connector.php line 50" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Connector.php line 50</a></li>
+       <li>at <abbr title="PDO">PDO</abbr>->__construct('mysql:host=localhost;port=3306;dbname=lumen-playground', 'homestead', 'secret', <em>array</em>('0', '2', '0', <em>false</em>, <em>false</em>)) in <a title="/home/vagrant/Code/vendor/illuminate/database/Connectors/Connector.php line 50" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Connector.php line 50</a></li>
+       <li>at <abbr title="Illuminate\Database\Connectors\Connector">Connector</abbr>->createConnection('mysql:host=localhost;port=3306;dbname=lumen-playground', <em>array</em>('driver' => 'mysql', 'host' => 'localhost', 'port' => '3306', 'database' => 'lumen-playground', 'username' => 'homestead', 'password' => 'secret', 'charset' => 'utf8', 'collation' => 'utf8_unicode_ci', 'prefix' => '', 'timezone' => '+00:00', 'strict' => <em>false</em>, 'name' => 'mysql'), <em>array</em>('0', '2', '0', <em>false</em>, <em>false</em>)) in <a title="/home/vagrant/Code/vendor/illuminate/database/Connectors/MySqlConnector.php line 22" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">MySqlConnector.php line 22</a></li>
+       <li>at <abbr title="Illuminate\Database\Connectors\MySqlConnector">MySqlConnector</abbr>->connect(<em>array</em>('driver' => 'mysql', 'host' => 'localhost', 'port' => '3306', 'database' => 'lumen-playground', 'username' => 'homestead', 'password' => 'secret', 'charset' => 'utf8', 'collation' => 'utf8_unicode_ci', 'prefix' => '', 'timezone' => '+00:00', 'strict' => <em>false</em>, 'name' => 'mysql')) in <a title="/home/vagrant/Code/vendor/illuminate/database/Connectors/ConnectionFactory.php line 60" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">ConnectionFactory.php line 60</a></li>
+       <li>at <abbr title="Illuminate\Database\Connectors\ConnectionFactory">ConnectionFactory</abbr>->createSingleConnection(<em>array</em>('driver' => 'mysql', 'host' => 'localhost', 'port' => '3306', 'database' => 'lumen-playground', 'username' => 'homestead', 'password' => 'secret', 'charset' => 'utf8', 'collation' => 'utf8_unicode_ci', 'prefix' => '', 'timezone' => '+00:00', 'strict' => <em>false</em>, 'name' => 'mysql')) in <a title="/home/vagrant/Code/vendor/illuminate/database/Connectors/ConnectionFactory.php line 49" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">ConnectionFactory.php line 49</a></li>
+       <li>at <abbr title="Illuminate\Database\Connectors\ConnectionFactory">ConnectionFactory</abbr>->make(<em>array</em>('driver' => 'mysql', 'host' => 'localhost', 'port' => '3306', 'database' => 'lumen-playground', 'username' => 'homestead', 'password' => 'secret', 'charset' => 'utf8', 'collation' => 'utf8_unicode_ci', 'prefix' => '', 'timezone' => '+00:00', 'strict' => <em>false</em>, 'name' => 'mysql'), 'mysql') in <a title="/home/vagrant/Code/vendor/illuminate/database/DatabaseManager.php line 175" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">DatabaseManager.php line 175</a></li>
+       <li>at <abbr title="Illuminate\Database\DatabaseManager">DatabaseManager</abbr>->makeConnection('mysql') in <a title="/home/vagrant/Code/vendor/illuminate/database/DatabaseManager.php line 67" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">DatabaseManager.php line 67</a></li>
+       <li>at <abbr title="Illuminate\Database\DatabaseManager">DatabaseManager</abbr>->connection('mysql') in <a title="/home/vagrant/Code/vendor/illuminate/database/Eloquent/Model.php line 3209" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Model.php line 3209</a></li>
+       <li>at <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>::resolveConnection(<em>null</em>) in <a title="/home/vagrant/Code/vendor/illuminate/database/Eloquent/Model.php line 3175" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Model.php line 3175</a></li>
+       <li>at <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>->getConnection() in <a title="/home/vagrant/Code/vendor/illuminate/database/Eloquent/Model.php line 1908" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Model.php line 1908</a></li>
+       <li>at <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>->newBaseQueryBuilder() in <a title="/home/vagrant/Code/vendor/illuminate/database/Eloquent/Model.php line 1851" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Model.php line 1851</a></li>
+       <li>at <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>->newQueryWithoutScopes() in <a title="/home/vagrant/Code/vendor/illuminate/database/Eloquent/Model.php line 1825" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Model.php line 1825</a></li>
+       <li>at <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>->newQuery() in <a title="/home/vagrant/Code/vendor/illuminate/database/Eloquent/Model.php line 3421" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Model.php line 3421</a></li>
+       <li>at <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>->__call('where', <em>array</em>(<em>array</em>('facebook_id' => '10209017657342984')))</li>
+       <li>at <abbr title=""></abbr>call_user_func_array(<em>array</em>(<em>object</em>(<abbr title="App\Models\User">User</abbr>), 'where'), <em>array</em>(<em>array</em>('facebook_id' => '10209017657342984'))) in <a title="/home/vagrant/Code/vendor/illuminate/database/Eloquent/Model.php line 3437" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Model.php line 3437</a></li>
+       <li>at <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>::__callStatic('where', <em>array</em>(<em>array</em>('facebook_id' => '10209017657342984'))) in <a title="/home/vagrant/Code/vendor/illuminate/database/Eloquent/Model.php line 577" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Model.php line 577</a></li>
+       <li>at <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>::firstOrCreate(<em>array</em>('facebook_id' => '10209017657342984')) in <a title="/home/vagrant/Code/app/Models/User.php line 20" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">User.php line 20</a></li>
+       <li>at <abbr title="App\Models\User">User</abbr>::findOrCreateByFacebookId('10209017657342984') in <a title="/home/vagrant/Code/app/Http/Controllers/Controller.php line 44" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Controller.php line 44</a></li>
+       <li>at <abbr title="App\Http\Controllers\Controller">Controller</abbr>->facebookLogin(<em>object</em>(<abbr title="Illuminate\Http\Request">Request</abbr>))</li>
+       <li>at <abbr title=""></abbr>call_user_func_array(<em>array</em>(<em>object</em>(<abbr title="App\Http\Controllers\Controller">Controller</abbr>), 'facebookLogin'), <em>array</em>(<em>object</em>(<abbr title="Illuminate\Http\Request">Request</abbr>))) in <a title="/home/vagrant/Code/vendor/illuminate/container/Container.php line 502" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Container.php line 502</a></li>
+       <li>at <abbr title="Illuminate\Container\Container">Container</abbr>->call(<em>array</em>(<em>object</em>(<abbr title="App\Http\Controllers\Controller">Controller</abbr>), 'facebookLogin'), <em>array</em>()) in <a title="/home/vagrant/Code/vendor/laravel/lumen-framework/src/Application.php line 1371" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Application.php line 1371</a></li>
+       <li>at <abbr title="Laravel\Lumen\Application">Application</abbr>->callControllerCallable(<em>array</em>(<em>object</em>(<abbr title="App\Http\Controllers\Controller">Controller</abbr>), 'facebookLogin'), <em>array</em>()) in <a title="/home/vagrant/Code/vendor/laravel/lumen-framework/src/Application.php line 1335" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Application.php line 1335</a></li>
+       <li>at <abbr title="Laravel\Lumen\Application">Application</abbr>->callLumenController(<em>object</em>(<abbr title="App\Http\Controllers\Controller">Controller</abbr>), 'facebookLogin', <em>array</em>(<em>true</em>, <em>array</em>('uses' => 'App\Http\Controllers\Controller@facebookLogin'), <em>array</em>())) in <a title="/home/vagrant/Code/vendor/laravel/lumen-framework/src/Application.php line 1307" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Application.php line 1307</a></li>
+       <li>at <abbr title="Laravel\Lumen\Application">Application</abbr>->callControllerAction(<em>array</em>(<em>true</em>, <em>array</em>('uses' => 'App\Http\Controllers\Controller@facebookLogin'), <em>array</em>())) in <a title="/home/vagrant/Code/vendor/laravel/lumen-framework/src/Application.php line 1275" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Application.php line 1275</a></li>
+       <li>at <abbr title="Laravel\Lumen\Application">Application</abbr>->callActionOnArrayBasedRoute(<em>array</em>(<em>true</em>, <em>array</em>('uses' => 'App\Http\Controllers\Controller@facebookLogin'), <em>array</em>())) in <a title="/home/vagrant/Code/vendor/laravel/lumen-framework/src/Application.php line 1260" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Application.php line 1260</a></li>
+       <li>at <abbr title="Laravel\Lumen\Application">Application</abbr>->handleFoundRoute(<em>array</em>(<em>true</em>, <em>array</em>('uses' => 'App\Http\Controllers\Controller@facebookLogin'), <em>array</em>())) in <a title="/home/vagrant/Code/vendor/laravel/lumen-framework/src/Application.php line 1179" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Application.php line 1179</a></li>
+       <li>at <abbr title="Laravel\Lumen\Application">Application</abbr>->Laravel\Lumen\{closure}() in <a title="/home/vagrant/Code/vendor/laravel/lumen-framework/src/Application.php line 1414" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Application.php line 1414</a></li>
+       <li>at <abbr title="Laravel\Lumen\Application">Application</abbr>->sendThroughPipeline(<em>array</em>(), <em>object</em>(<abbr title="Closure">Closure</abbr>)) in <a title="/home/vagrant/Code/vendor/laravel/lumen-framework/src/Application.php line 1185" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Application.php line 1185</a></li>
+       <li>at <abbr title="Laravel\Lumen\Application">Application</abbr>->dispatch(<em>null</em>) in <a title="/home/vagrant/Code/vendor/laravel/lumen-framework/src/Application.php line 1125" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">Application.php line 1125</a></li>
+       <li>at <abbr title="Laravel\Lumen\Application">Application</abbr>->run() in <a title="/home/vagrant/Code/public/index.php line 28" ondblclick="var f=this.innerHTML;this.innerHTML=this.title;this.title=f;">index.php line 28</a></li>
+    </ol>
+</div>
+
+            </div>
+    </body>
+</html>
