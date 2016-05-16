@@ -20,4 +20,4 @@ $app->get('events', [
 ]);
 */
 
-$app->get('events', 'EventsController@getEvents');
+$app->post('events', 'EventsController@pullData');

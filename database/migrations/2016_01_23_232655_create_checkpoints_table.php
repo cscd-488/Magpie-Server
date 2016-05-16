@@ -28,6 +28,7 @@ class CreateCheckpointsTable extends Migration
             $table->string('lat');
             $table->string('lon');
             $table->string('qr');
+            $table->string('status');
             $table->timestamps();
         });
 
