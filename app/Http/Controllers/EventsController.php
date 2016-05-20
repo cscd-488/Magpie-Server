@@ -27,6 +27,8 @@ class EventsController
                     return $this->getEventByLocation($request);
                 case 4:
                     return $this->visitLocation($request);
+                case 5:
+                    return $this->eventsInProximity($request);
                 default:
                     abort('400', 'api code does not exist');
             }
@@ -79,6 +81,21 @@ class EventsController
 
         return 1; // indication of completion
 
+    }
+
+    public function eventsInProximity(Request $request) {
+
+        $latitude = $request->get('lat');
+        $longitude = $request->get('long');
+        $radius = $request->get('rad');
+
+        // todo: use radius to calculate
+
+        return Event::with('proximity')->get();
+
+
+
+        // return events within a specific radius
     }
 
     public function postEvent(Request $request)
