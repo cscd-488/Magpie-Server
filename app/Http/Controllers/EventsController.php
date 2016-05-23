@@ -89,13 +89,7 @@ class EventsController
         $longitude = $request->get('long');
         $radius = $request->get('rad');
 
-        // todo: use radius to calculate
-
         return Event::with('proximity')->get();
-
-
-
-        // return events within a specific radius
     }
 
     public function postEvent(Request $request)
