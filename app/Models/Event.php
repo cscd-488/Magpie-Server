@@ -4,6 +4,7 @@ namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Event extends Model
 {
@@ -12,9 +13,9 @@ class Event extends Model
         return $this->hasMany('App\Models\Checkpoint');
     }
 
-    public function proximity($radius, $lat, $lon) {
+    public static function proximity($radius, $lat, $lon) {
 
-        $events = $this->select(
+        $events = select(
             DB::raw("*,
             ( 3959 * acos( cos( radians($lat) ) * cos( radians( lat ) )
             * cos( radians( lon ) - radians($lon) ) + sin( radians($lat) )
