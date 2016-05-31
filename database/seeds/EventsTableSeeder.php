@@ -13,6 +13,11 @@ class EventsTableSeeder extends Seeder
     {
         DB::table('events')->insert(array(
 
+           array('title'=>'EWU Tour', 'short_title'=>'EWU', 'author'=>'Josh Harshman',
+               'description'=>'Take a quick tour of Eastern Washington University!',
+               'image_src'=>'http://i.imgur.com/RZX03d7.png',
+               'lat'=>47.491355, 'lon'=>-117.582829, 'qr'=>str_random(5)),
+
            array('title'=>str_random(10), 'short_title'=>str_random(10), 'author'=>str_random(10),
                'description'=>str_random(10), 'image_src'=>'http://i.imgur.com/bsABe5c.jpg',
                'lat'=>47.490519, 'lon'=>-117.583796, 'qr'=>str_random(5)),
