@@ -25,8 +25,8 @@ class CreateCheckpointsTable extends Migration
             $table->string('artist');
             $table->string('description');
             $table->string('image_src');
-            $table->double('lat', 10, 10);
-            $table->double('lon', 10, 10);
+            $table->double('lat', 10, 7);
+            $table->double('lon', 10, 7);
             $table->string('qr');
             $table->integer('status');
             $table->timestamps();
