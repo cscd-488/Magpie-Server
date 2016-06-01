@@ -23,8 +23,8 @@ class CreateEventsTable extends Migration
             $table->string('author');
             $table->string('description');
             $table->string('image_src');
-            $table->decimal('lat', 20, 20);
-            $table->decimal('lon', 20, 20);
+            $table->double('lat', 20, 20);
+            $table->double('lon', 20, 20);
             $table->string('qr');
             $table->timestamps();
         });
